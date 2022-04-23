@@ -25,7 +25,7 @@ public class DemoController {
         String remark= "<html>\n" +
                 "<body style=\"background-color:PowderBlue;\">\n" +
                 "\n" +
-                "<h3>颜儿,你还不睡觉!</h1>\n" +
+                "<h1>颜儿,你还不睡觉!</h1>\n" +
                 "\n" +
                 "<p style=\"font-family:verdana;color:red\">\n" +
                 "这都几点了\uD83D\uDE20</p>\n" +
@@ -33,7 +33,7 @@ public class DemoController {
                 "<p style=\"font-family:verdana;color:green\">\n" +
                 ""+date+"</p>\n" +
                 "\n" +
-                "<p style=\"font-size:20px\">网站今天搭建立起第一行代码,后续功能,不断完善,敬请期待!</p>\n" +
+                "<p style=\"font-size:30px\">这是该网站的第一行代码,后续功能,不断完善,敬请期待!</p>\n" +
                 "</body>\n" +
                 "</html>\n";
         return remark;
