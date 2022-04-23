@@ -14,26 +14,26 @@ import java.util.Date;
 @RestController
 public class DemoController {
 
-    @GetMapping("/hello")
-    public String hello(){
-        return "颜儿,万丈高楼的第一块基石已经搭建成功.......后续功能,敬请期待,但今天请早点睡觉,因为现在已经是:"+DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
-    }
+//    @GetMapping("/hello")
+//    public String hello(){
+//        return "hello world";
+//    }
 
-    @GetMapping("/test1")
+    @GetMapping("/hello")
     public String test1(){
+        String date = DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
         String remark= "<html>\n" +
+                "<body style=\"background-color:PowderBlue;\">\n" +
                 "\n" +
-                "<body>\n" +
+                "<h3>颜儿,你还不睡觉!</h1>\n" +
                 "\n" +
-                "<h1>This is heading 1</h1>\n" +
-                "<h2>This is heading 2</h2>\n" +
-                "<h3>This is heading 3</h3>\n" +
-                "<h4>This is heading 4</h4>\n" +
-                "<h5>This is heading 5</h5>\n" +
-                "<h6>This is heading 6</h6>\n" +
+                "<p style=\"font-family:verdana;color:red\">\n" +
+                "这都几点了\uD83D\uDE20</p>\n" +
                 "\n" +
-                "<p>请仅仅把标题标签用于标题文本。不要仅仅为了产生粗体文本而使用它们。请使用其它标签或 CSS 代替。</p>\n" +
+                "<p style=\"font-family:verdana;color:green\">\n" +
+                ""+date+"</p>\n" +
                 "\n" +
+                "<p style=\"font-size:20px\">网站今天搭建立起第一行代码,后续功能,不断完善,敬请期待!</p>\n" +
                 "</body>\n" +
                 "</html>\n";
         return remark;
