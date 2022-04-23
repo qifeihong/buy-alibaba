@@ -17,7 +17,7 @@ public class DemoController {
     @GetMapping("/getTime")
     public String hello(){
         System.out.println("=====================return hello world=======================");
-        return "当前时间:" + DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
+        return "当前时间V2:" + DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
     }
 
 }
