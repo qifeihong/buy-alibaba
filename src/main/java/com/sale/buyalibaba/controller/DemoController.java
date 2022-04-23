@@ -14,10 +14,9 @@ import java.util.Date;
 @RestController
 public class DemoController {
 
-    @GetMapping("/getTime")
+    @GetMapping("/hello")
     public String hello(){
-        System.out.println("=====================return hello world=======================");
-        return "当前时间V2:" + DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
+        return "颜儿,万丈高楼的第一块基石已经搭建成功.......后续功能,敬请期待,但今天请早点睡觉,因为现在已经是:"+DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
     }
 
 }
