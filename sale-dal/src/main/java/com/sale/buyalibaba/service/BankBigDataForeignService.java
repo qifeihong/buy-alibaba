@@ -1,6 +1,6 @@
 package com.sale.buyalibaba.service;
 
-import com.sale.buyalibaba.entity.BankBigDataForeign;
+import com.sale.buyalibaba.po.BankBigDataForeign;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

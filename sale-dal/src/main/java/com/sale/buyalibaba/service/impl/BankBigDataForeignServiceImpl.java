@@ -1,7 +1,7 @@
 package com.sale.buyalibaba.service.impl;
 
-import com.sale.buyalibaba.entity.BankBigDataForeign;
-import com.sale.buyalibaba.repository.BankBigDataForeignMapper;
+import com.sale.buyalibaba.po.BankBigDataForeign;
+import com.sale.buyalibaba.mapper.BankBigDataForeignMapper;
 import com.sale.buyalibaba.service.BankBigDataForeignService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

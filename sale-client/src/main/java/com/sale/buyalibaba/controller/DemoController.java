@@ -1,11 +1,18 @@
-package com.sale.buyalibaba.rest;
+package com.sale.buyalibaba.controller;
 
 import cn.hutool.core.date.DateUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.sale.buyalibaba.po.BankBigData;
+import com.sale.buyalibaba.service.BankBigDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Auther: qfh
@@ -16,10 +23,24 @@ import java.util.Date;
 @Slf4j
 public class DemoController {
 
-//    @GetMapping("/hello")
-//    public String hello(){
-//        return "hello world";
-//    }
+    @Resource
+    private BankBigDataService bankBigDataService;
+
+
+
+
+    @ResponseBody
+    @GetMapping("/test1")
+    public List<BankBigData> test2(){
+        List<Long> ids = new ArrayList<>();
+        ids.add(10211L);
+        ids.add(10212L);
+        QueryWrapper<BankBigData> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().in(BankBigData::getId, ids);
+        List<BankBigData> list = bankBigDataService.list(queryWrapper);
+        return list;
+    }
+
 
     @GetMapping("/hello")
     public String test1(){

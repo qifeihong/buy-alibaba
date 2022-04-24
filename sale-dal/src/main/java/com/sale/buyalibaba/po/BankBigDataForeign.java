@@ -1,4 +1,4 @@
-package com.sale.buyalibaba.entity;
+package com.sale.buyalibaba.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 银行大数据信息表
+ * 国外银行大数据信息表
  * </p>
  *
  * @author 祁飞鸿
@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class BankBigData implements Serializable {
+public class BankBigDataForeign implements Serializable {
 
     private static final long serialVersionUID=1L;
 
@@ -28,76 +28,64 @@ public class BankBigData implements Serializable {
     private Long id;
 
     /**
-     * 开户行编码:0045
+     * BIC码
      */
-    @TableField("bank_code")
-    private String bankCode;
-
-    /**
-     * 开户行名称:建设银行
-     */
-    @TableField("bank_name")
-    private String bankName;
-
-    /**
-     * 联行号, CNAPS CODE
-     */
-    @TableField("branch_code")
-    private String branchCode;
-
-    /**
-     * 开户行全称:xxx银行xx支行
-     */
-    @TableField("branch_name")
-    private String branchName;
-
-    /**
-     * 开户行地址
-     */
-    @TableField("account_bank_address")
-    private String accountBankAddress;
-
-    /**
-     * swift/BIC码
-     */
-    @TableField("swift_code")
-    private String swiftCode;
-
-    /**
-     * 省代码
-     */
-    @TableField("province_code")
-    private String provinceCode;
-
-    /**
-     * 省名称
-     */
-    @TableField("province_name")
-    private String provinceName;
-
-    /**
-     * 市代码
-     */
-    @TableField("city_code")
-    private String cityCode;
-
-    /**
-     * 市名称
-     */
-    @TableField("city_name")
-    private String cityName;
-
-    /**
-     * 国家代码
-     */
-    @TableField("country_code")
-    private String countryCode;
+    @TableField("bic")
+    private String bic;
 
     /**
      * 国家
      */
     @TableField("country")
     private String country;
+
+    /**
+     * 省
+     */
+    @TableField("department")
+    private String department;
+
+    /**
+     * 城市
+     */
+    @TableField("city_name")
+    private String cityName;
+
+    /**
+     * 状态
+     */
+    @TableField("status")
+    private String status;
+
+    /**
+     * 类型
+     */
+    @TableField("type")
+    private String type;
+
+    /**
+     * 机构名称
+     */
+    @TableField("institution_name")
+    private String institutionName;
+
+    /**
+     * 支行信息
+     */
+    @TableField("branch_info")
+    private String branchInfo;
+
+    /**
+     * CHIPS ID
+     */
+    @TableField("chips_id")
+    private String chipsId;
+
+    /**
+     * NATIONAL ID
+     */
+    @TableField("NATIONAL_ID")
+    private String nationalId;
 
     /**
      * 租户id

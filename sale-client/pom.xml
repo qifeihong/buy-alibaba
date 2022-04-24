@@ -11,6 +11,11 @@
 
     <artifactId>sale-client</artifactId>
     <dependencies>
+        <dependency>
+            <groupId>com.sale</groupId>
+            <artifactId>sale-dal</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <properties>

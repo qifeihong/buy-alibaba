@@ -1,6 +1,6 @@
-package com.sale.buyalibaba.repository;
+package com.sale.buyalibaba.mapper;
 
-import com.sale.buyalibaba.entity.BankBigDataForeign;
+import com.sale.buyalibaba.po.BankBigDataForeign;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
