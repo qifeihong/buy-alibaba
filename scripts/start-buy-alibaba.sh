@@ -1,0 +1,53 @@
+#!/bin/bash
+
+function check() {
+    COUNT="0"
+            while true; do
+            RESP="$( curl 'http://127.0.0.1:8080/check' )"
+            #echo $RESP
+            if [[ $RESP != "" ]]; then
+                echo "服务启动成功!!!"
+                break
+            elif (( $COUNT > "50" )); then
+                echo Timeout Controller DOWN
+                exit 1
+            else
+                COUNT=$(( ${COUNT} + 1 ))
+                echo "连接等待中..."
+                sleep 5
+                if [[ $(($COUNT % 10)) == 0 ]]; then
+                    echo already waited ${COUNT} times...
+                fi
+            fi
+        done
+}
+
+echo "==========================关闭原服务=========================="
+PID=$(ps -ef|grep sale-starter-0.0.1-SNAPSHOT.jar|grep -v grep|awk '{print $2}')
+if [ -z $PID ]; then
+        echo "不存在该服务进程"
+else
+        echo "process id: $PID"
+        kill -9 ${PID}
+        echo "已删除原服务进程"
+fi
+
+echo "==========================进入git项目目录=========================="
+cd  /data/codes/buy-alibaba/
+echo "==========================git切换 dev分支=========================="
+git checkout dev
+echo "==========================git fetch=========================="
+git fetch
+echo "==========================git pull=========================="
+git pull
+echo "==========================删除打包目录=========================="
+rm -rf  /data/codes/buy-alibaba/sale-starter/target/
+echo "==========================编译并跳过单元测试=========================="
+mvn  clean package -Dmaven.test.skip=true -Ptest
+echo "==========================开始启动服务=========================="
+#java -jar /data/codes/buy-alibaba/sale-starter/target/sale-starter-0.0.1-SNAPSHOT.jar
+nohup java -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/jdk_log/dump/heap/ -Xmx512m -Xms512m -XX:+DisableExplicitGC -verbose:gc -Xloggc:/data/jdk_log/dump/gc.%t.log -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCTaskTimeStamps -XX:+PrintGCDetails -XX:+PrintGCDateStamps -jar /data/codes/buy-alibaba/sale-starter/target/sale-starter-0.0.1-SNAPSHOT.jar > /data/logs/buy-alibaba/applog.log 2>&1 &
+#tail -f /data/logs/buy-alibaba/applog.log
+check
+
+
