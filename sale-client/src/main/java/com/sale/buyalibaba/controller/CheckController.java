@@ -28,8 +28,8 @@ public class CheckController {
     @GetMapping("/check")
     public List<BankBigData> check() {
         List<Long> ids = new ArrayList<>();
-        ids.add(10211L);
-        ids.add(10212L);
+        long a = (long) (Math.random()*150000)+10211;
+        ids.add(a);
         QueryWrapper<BankBigData> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().in(BankBigData::getId, ids);
         List<BankBigData> list = bankBigDataService.list(queryWrapper);
