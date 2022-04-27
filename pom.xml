@@ -61,21 +61,4 @@
 
 	</dependencies>
 
-<!--	<build>-->
-<!--		<plugins>-->
-<!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--			</plugin>-->
-<!--&lt;!&ndash;			<plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;				<groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;				<artifactId>maven-compiler-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;				<configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;					<source>8</source>&ndash;&gt;-->
-<!--&lt;!&ndash;					<target>8</target>&ndash;&gt;-->
-<!--&lt;!&ndash;				</configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;			</plugin>&ndash;&gt;-->
-<!--		</plugins>-->
-<!--	</build>-->
-
 </project>
