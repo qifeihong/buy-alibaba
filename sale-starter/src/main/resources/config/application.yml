@@ -1,8 +1,0 @@
-#appid 同Apollo中配置的名字
-app:
-  id: buy.alibaba
-apollo:
-  meta: http://124.222.85.36:8070
-  bootstrap:
-    enabled: true
-    namespaces: application,db
