@@ -2,7 +2,7 @@
 app:
   id: buy.alibaba
 apollo:
-  meta: http://localhost:8070
+  meta: http://124.222.85.36:8070
   bootstrap:
     enabled: true
     namespaces: application,db
