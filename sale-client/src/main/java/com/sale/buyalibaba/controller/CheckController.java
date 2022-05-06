@@ -1,8 +1,11 @@
 package com.sale.buyalibaba.controller;
 
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.sale.buyalibaba.po.BankBigData;
 import com.sale.buyalibaba.service.BankBigDataService;
+import com.sale.buyalibaba.utils.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +35,7 @@ public class CheckController {
 
     @ResponseBody
     @GetMapping("/check")
-    public List<BankBigData> check() {
+    public String check() {
         log.info("获取Apollo配置信息:{}", demoKey);
         List<Long> ids = new ArrayList<>();
         long a = (long) (Math.random() * 150000) + 10211;
@@ -43,7 +46,11 @@ public class CheckController {
         for (BankBigData data : list) {
             data.setCreateName(demoKey);
         }
-        return list;
+        String originJson = JSONUtil.toJsonStr(list);
+        System.out.println(originJson);
+        String formatJson = JsonTransferUtil.formatJson(originJson);
+        System.out.println(formatJson);
+        return formatJson;
     }
 
 }
