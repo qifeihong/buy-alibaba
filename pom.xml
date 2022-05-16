@@ -10,6 +10,7 @@
 		<module>sale-generator</module>
 		<module>sale-dal</module>
 		<module>sale-starter</module>
+		<module>sale-remote</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
