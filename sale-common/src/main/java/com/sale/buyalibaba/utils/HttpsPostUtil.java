@@ -132,7 +132,6 @@ public class HttpsPostUtil {
 
     public static void main(String[] args) {
         String url = "https://enn-finance-center-bff.dev.ennew.com/bank/page";
-        //String url = "https://enn-finance-center-bff.dev.ennew.com/bank/page";
         Map<String, String> headerMap = new HashMap<>();
         headerMap.put("X-GW-AccessKey", "pm8NQT0GPsYsONR7RytyKEwkMSBCyVxc");
         headerMap.put("accessKey", "bb4ec15a0492");
